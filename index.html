@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111827">
+<meta name="description" content="CONDE CONNECT — estudos, escola e rotina em um só lugar.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>CONDE CONNECT</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="toast" class="toast"></div>
+
+<header class="topbar">
+  <a class="brand" href="#" onclick="showPage('home');return false;">
+    <span class="brand-mark">C</span><span>CONDE <b>CONNECT</b></span>
+  </a>
+  <button class="menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">☰</button>
+  <nav id="nav">
+    <a href="#estudos" onclick="showPage('estudos')">🎓 Estudos</a>
+    <a href="#escola" onclick="showPage('escola')">🏫 Escola</a>
+    <a href="#rotina" onclick="showPage('rotina')">📅 Rotina</a>
+    <a href="#conexoes" onclick="showPage('conexoes')">💬 Conexões</a>
+  </nav>
+</header>
+
+<main>
+<section id="home" class="page active">
+  <div class="hero">
+    <div>
+      <p class="eyebrow">SUA CENTRAL ESCOLAR</p>
+      <h1>Estudos, escola e rotina.<br><span>Em um só lugar.</span></h1>
+      <p class="lead">Uma plataforma simples para alunos e professores se organizarem e se conectarem sem precisar expor dados pessoais.</p>
+      <div class="hero-actions">
+        <button class="primary" onclick="showPage('estudos')">Começar agora →</button>
+        <button class="secondary" onclick="showPage('escola')">Conhecer a escola</button>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="mini-top"><span>CONDE CONNECT</span><span>● online</span></div>
+      <div class="hello">Olá, <b>estudante!</b> 👋</div>
+      <div class="progress-row"><span>Seu dia</span><b>3 de 5 tarefas</b></div>
+      <div class="progress"><i style="width:60%"></i></div>
+      <div class="mini-grid"><div>🎓<b>Estudos</b><small>Continue de onde parou</small></div><div>📅<b>Rotina</b><small>Veja o que vem agora</small></div></div>
+    </div>
+  </div>
+
+  <div class="section-head"><div><p class="eyebrow">NÚCLEOS</p><h2>O que você precisa, sem complicação.</h2></div></div>
+  <div class="cards three">
+    <article class="feature" onclick="showPage('estudos')"><span class="icon">🎓</span><h3>Estudos</h3><p>Organize seu aprendizado e pratique com ferramentas de estudo.</p><div class="chips"><span>Conde Study</span><span>Tutor IA</span><span>Simulados</span></div></article>
+    <article class="feature" onclick="showPage('escola')"><span class="icon">🏫</span><h3>Escola</h3><p>Salas, professores, avisos e comunicação dentro da plataforma.</p><div class="chips"><span>Salas</span><span>Professores</span><span>Avisos</span></div></article>
+    <article class="feature" onclick="showPage('rotina')"><span class="icon">📅</span><h3>Rotina</h3><p>Tenha uma visão rápida da sua agenda e das tarefas do dia.</p><div class="chips"><span>Grade</span><span>Agenda</span><span>Meu Dia</span></div></article>
+  </div>
+</section>
+
+<section id="estudos" class="page">
+  <div class="page-title"><p class="eyebrow">🎓 ESTUDOS</p><h1>Seu espaço para aprender.</h1><p>Ferramentas pensadas para deixar o estudo mais organizado.</p></div>
+  <div class="cards two">
+    <article class="tool"><span class="tool-icon">📚</span><h3>Conde Study</h3><p>Centralize matérias, conteúdos e seu progresso.</p><button onclick="toast('Conde Study estará disponível na próxima versão.')">Abrir</button></article>
+    <article class="tool"><span class="tool-icon">🤖</span><h3>Tutor IA</h3><p>Tire dúvidas e transforme conteúdos difíceis em explicações mais claras.</p><button onclick="toast('Tutor IA será conectado em uma próxima versão.')">Abrir tutor</button></article>
+    <article class="tool"><span class="tool-icon">📝</span><h3>Simulados</h3><p>Pratique com questões e acompanhe seu desempenho.</p><button onclick="toast('Área de simulados preparada para a próxima etapa.')">Praticar</button></article>
+    <article class="tool"><span class="tool-icon">📊</span><h3>Desempenho</h3><p>Veja sua evolução por matéria de forma simples.</p><button onclick="toast('Ainda não há dados de desempenho.')">Ver desempenho</button></article>
+  </div>
+</section>
+
+<section id="escola" class="page">
+  <div class="page-title"><p class="eyebrow">🏫 ESCOLA</p><h1>Uma escola mais conectada.</h1><p>Comunicação escolar sem precisar misturar vida pessoal e escola.</p></div>
+  <div class="cards two">
+    <article class="tool highlight"><span class="tool-icon">👨‍🏫</span><h3>Área do professor</h3><p>Professores podem criar um perfil profissional, salas e avisos usando um identificador CONDE — sem divulgar telefone ou redes pessoais.</p><button onclick="showPage('professor')">Sou professor →</button></article>
+    <article class="tool"><span class="tool-icon">🎓</span><h3>Área do aluno</h3><p>Entre em salas por código e encontre seus professores dentro da plataforma.</p><button onclick="showPage('aluno')">Sou aluno →</button></article>
+    <article class="tool"><span class="tool-icon">🏫</span><h3>Salas e turmas</h3><p>Uma área central para atividades, materiais e avisos de cada turma.</p><button onclick="toast('Crie uma conta para configurar sua primeira sala.')">Ver salas</button></article>
+    <article class="tool"><span class="tool-icon">📢</span><h3>Avisos</h3><p>Comunicados ficam organizados no ambiente escolar, sem depender de grupos pessoais.</p><button onclick="toast('Nenhum aviso novo.')">Ver avisos</button></article>
+  </div>
+  <div class="privacy"><b>🔐 Privacidade por design</b><span>O contato acontece dentro do CONDE CONNECT. Dados pessoais não precisam ser compartilhados para iniciar uma conversa.</span></div>
+</section>
+
+<section id="professor" class="page">
+  <div class="page-title"><p class="eyebrow">👨‍🏫 PROFESSOR</p><h1>Seu perfil profissional, separado do pessoal.</h1><p>Use um ID CONDE para conversar com alunos e administrar suas salas.</p></div>
+  <div class="profile-layout">
+    <div class="profile-card"><div class="avatar">P</div><h2>Prof. Exemplo</h2><p>Matemática • 9º ano</p><code>@prof-exemplo-284</code><div class="status">● Disponível</div></div>
+    <div class="tool"><h3>O que o professor poderá fazer</h3><ul class="clean-list"><li>👥 Criar e administrar turmas</li><li>🔑 Gerar código de entrada para alunos</li><li>💬 Receber mensagens dentro do CONDE</li><li>📢 Publicar avisos</li><li>📚 Compartilhar materiais</li><li>🛡️ Bloquear ou denunciar contas</li></ul><button class="primary" onclick="toast('Cadastro de professor será conectado ao banco de dados na próxima etapa.')">Criar perfil</button></div>
+  </div>
+</section>
+
+<section id="aluno" class="page">
+  <div class="page-title"><p class="eyebrow">🎓 ALUNO</p><h1>Entre na sua comunidade escolar.</h1><p>Use um ID CONDE e códigos de sala, sem precisar expor seu telefone.</p></div>
+  <div class="join-box"><div><span class="tool-icon">🔑</span><h2>Entrar em uma sala</h2><p>Digite o código fornecido pelo professor.</p></div><div class="join-form"><input id="roomCode" maxlength="12" placeholder="Ex.: MAT9A-24" aria-label="Código da sala"><button class="primary" onclick="joinRoom()">Entrar na sala</button></div></div>
+  <div class="privacy"><b>💬 Conexões</b><span>Seu contato pode ser feito por um ID CONDE. Telefone, WhatsApp e Instagram não são necessários.</span></div>
+</section>
+
+<section id="conexoes" class="page">
+  <div class="page-title"><p class="eyebrow">💬 CONEXÕES</p><h1>Converse dentro do CONDE.</h1><p>Uma identidade escolar pode ser suficiente para conectar aluno e professor.</p></div>
+  <div class="chat-demo">
+    <aside><div class="chat-user active"><span class="avatar small">P</span><div><b>Prof. Exemplo</b><small>Matemática</small></div></div><div class="chat-user"><span class="avatar small">A</span><div><b>Administração</b><small>Avisos gerais</small></div></div></aside>
+    <div class="chat-main"><div class="chat-header"><b>Prof. Exemplo</b><small>@prof-exemplo-284</small></div><div class="messages"><div class="bubble">Olá! Como posso ajudar?</div><div class="bubble mine">Professor, fiquei com dúvida na atividade.</div><div class="bubble">Claro! Envie a questão por aqui.</div></div><div class="fake-input">Mensagens serão ativadas com o login seguro →</div></div>
+  </div>
+</section>
+
+<section id="rotina" class="page">
+  <div class="page-title"><p class="eyebrow">📅 ROTINA</p><h1>Saiba o que vem agora.</h1><p>Uma visão compacta do seu dia escolar.</p></div>
+  <div class="day-grid"><article><small>08:00</small><b>Matemática</b><span>📚 Sala 12</span></article><article><small>09:00</small><b>Ciências</b><span>🔬 Laboratório</span></article><article><small>10:20</small><b>Português</b><span>📖 Sala 8</span></article><article><small>11:20</small><b>Projeto</b><span>💻 Informática</span></article></div>
+  <div class="cards two"><article class="tool"><span class="tool-icon">📋</span><h3>Agenda</h3><p>Provas, trabalhos e compromissos.</p><button onclick="toast('Agenda pronta para receber seus eventos.')">Abrir agenda</button></article><article class="tool"><span class="tool-icon">✅</span><h3>Meu Dia</h3><p>Transforme sua agenda em uma lista simples.</p><button onclick="toast('Você ainda não tem tarefas cadastradas.')">Ver tarefas</button></article></div>
+</section>
+</main>
+
+<footer><b>CONDE CONNECT</b><span>Estudos • Escola • Rotina</span><span>Projeto em desenvolvimento</span></footer>
+<script src="app.js"></script>
+</body>
+</html>
